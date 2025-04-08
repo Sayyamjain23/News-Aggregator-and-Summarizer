@@ -43,11 +43,13 @@ Summarizer
 To Run Frontend:
 cd client
 npm install
+
 npm start
 
 To Run Backend:
 cd server
 npm install
+
 export OPENAI_API_KEY="your-api-key"
 node index.js
 
