@@ -255,15 +255,24 @@ app.get('/scrape', async (req, res) => {
   }
 });
 
-const path = require('path');
+const isProduction = process.env.NODE_ENV === 'production';
+const isCombinedDeploy = process.env.COMBINED_DEPLOY === 'true';
 
-// Serve static files from React app
-app.use(express.static(path.join(__dirname, 'client/build')));
+// API routes
+app.use('/api', apiRoutes);
 
-// Catch-all handler for SPA
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
-});
+// Only serve frontend if we're in a combined deployment
+if (isProduction && isCombinedDeploy) {
+  app.use(express.static('client/build'));
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  });
+} else {
+  // For API-only deployment
+  app.get('/', (req, res) => {
+    res.json({ message: 'News Aggregator API is running' });
+  });
+}
 
 
 
