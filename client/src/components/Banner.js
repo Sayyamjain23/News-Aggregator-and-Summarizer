@@ -20,7 +20,7 @@ export const Banner = () => {
     }, delta);
 
     return () => { clearInterval(ticker) };
-  }, [text])
+  }, [text,delta])
 
   const tick = () => {
     let i = loopNum % toRotate.length;
@@ -50,12 +50,12 @@ export const Banner = () => {
   return (
     <section className="banner" id="home">
       <Container>
-        <Row className="aligh-items-center">
+        <Row className="align-items-center">
           <Col xs={12} md={6} xl={7}>
             <TrackVisibility>
               {({ isVisible }) =>
               <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                <h1>{`Hi! I'm TextCraft, an AI News `} <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Aggregator", "Summariser", "Curator" ]'><span className="wrap">{text}</span></span></h1>
+                <h1>{`Hi! I'm TextCraft, an AI News `} <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Aggregator", "Summariser", "Curator" ]'><span className="wrap" data-index={index}>{text}</span></span></h1>
                   <p>Discover the Future of Informed Content Consumption! Powered by cutting-edge Artificial Intelligence, TextCraft delivers tailored news summaries faster than ever. Say goodbye to information overload and hello to personalized news curation. Join us on the journey to smarter news consumption with TextCraft.</p>
                   <button onClick={() => console.log('connect')}>Get Started <ArrowRightCircle size={25} /></button>
               </div>}
