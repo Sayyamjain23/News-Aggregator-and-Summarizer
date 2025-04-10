@@ -46,7 +46,7 @@ export const Banner = () => {
     }, delta);
 
     return () => clearInterval(ticker);
-  }, [delta, isDeleting, loopNum]); // Proper dependency array
+  }, [delta, isDeleting, loopNum,toRotate]); // Proper dependency array
 
   return (
     <section className="banner" id="home">
