@@ -12,7 +12,7 @@ export const Banner = () => {
   const [delta, setDelta] = useState(300 - Math.random() * 100);
   const [index, setIndex] = useState(1);
 
-  const toRotate = ["Aggregator", "Summariser", "Curator"];
+  const toRotate(()=> ["Aggregator", "Summariser", "Curator"],[]);
   const period = 2000;
 
   useEffect(() => {
