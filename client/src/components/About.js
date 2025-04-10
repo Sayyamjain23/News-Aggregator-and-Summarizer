@@ -13,7 +13,7 @@ export const About = () => {
   const handleSummarizeClick = async () => {
     try {
       // Make a request to your backend to get information from the provided URL
-      const scrapeResponse = await axios.get(`http://localhost:8000/scrape?url=${encodeURIComponent(url)}`);
+      const scrapeResponse = await axios.get(`https://news-aggregator-and-summarizer.onrender.com/scrape?url=${encodeURIComponent(url)}`);
       const scrapeData = scrapeResponse.data;
 
       // Extract the information from the response
