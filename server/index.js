@@ -258,9 +258,6 @@ app.get('/scrape', async (req, res) => {
 const isProduction = process.env.NODE_ENV === 'production';
 const isCombinedDeploy = process.env.COMBINED_DEPLOY === 'true';
 
-// API routes
-app.use('/api', apiRoutes);
-
 // Only serve frontend if we're in a combined deployment
 if (isProduction && isCombinedDeploy) {
   app.use(express.static('client/build'));
