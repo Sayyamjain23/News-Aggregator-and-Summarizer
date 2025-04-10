@@ -17,7 +17,7 @@ export const Projects = () => {
   useEffect(() => {
     // Fetch news data from your backend server
     setLoading(true);
-    axios.get('http://localhost:8000/api/news')
+    axios.get('https://news-aggregator-and-summarizer.onrender.com/api/news')
       .then(response => {
         console.log('News data received:', response.data);
         setNews(response.data);
