@@ -118,7 +118,7 @@ export const Contact = () => {
                                 setStatus({});
                               }}
                             >
-                              {isRegistering ? 'Register' : 'Login'}
+                              {isRegistering ? 'Login' : 'Register'}
                             </span>
                           </p>
                         </Col>
