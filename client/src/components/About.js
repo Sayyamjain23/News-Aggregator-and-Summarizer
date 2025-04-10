@@ -17,7 +17,7 @@ export const About = () => {
       const scrapeData = scrapeResponse.data;
 
       // Extract the information from the response
-      const { title, articleBody, summary } = scrapeData;
+      const { title, summary } = scrapeData;
 
       // Set the data state with the information
       setTitle(title)
