@@ -30,7 +30,7 @@ export const Contact = () => {
 
     const endpoint = isRegistering ? "register" : "login";
     try {
-      let response = await fetch(`http://localhost:8000/${endpoint}`, {
+      let response = await fetch(`https://news-aggregator-and-summarizer.onrender.com/${endpoint}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json;charset=utf-8",
